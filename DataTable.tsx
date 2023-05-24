@@ -17,10 +17,10 @@ export function DataTable(props: DataTableProps) {
 	function showData() {
 		const indexOfLastPage = currentPage * rowsPerPage;
 		const indexOfFirstPage = indexOfLastPage - rowsPerPage;
-		const currentPosts = props.dataArray.slice(indexOfFirstPage, indexOfLastPage);
+		const currentRows = props.dataArray.slice(indexOfFirstPage, indexOfLastPage);
 
 		return (
-			currentPosts.map((data, index) => {
+			currentRows.map((data, index) => {
 				return (
 					<tr class="border-2" key={index}>
 						{keys.map((k) => {
