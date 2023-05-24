@@ -1,6 +1,9 @@
 # DataTable
 deno component for a dynamic data table based on data object stored in javascript array.
 
+## Version
+v0.0.2-alpha
+
 ## Usage
 ~~~js
 
@@ -19,6 +22,7 @@ import { DataTable } from "mod.ts";
   );
 
 ~~~
-## Feature
+## Features
 * Table will automatically update when dataArray is changed.
+* Pagination with fixed number of pages
 
