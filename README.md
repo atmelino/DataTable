@@ -4,6 +4,9 @@ deno component for a dynamic data table based on data object stored in javascrip
 ## Version
 v0.0.2-alpha
 
+## Link to deno.land
+https://deno.land/x/datatable@v0.0.2-alpha
+
 ## Usage
 ~~~js
 
