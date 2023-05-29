@@ -1,28 +1,11 @@
 import { useEffect, useRef, useState } from "preact/hooks";
-// import { DataTable } from "../../../../../../DataTable_dev/mod.ts";
-import { DataTable } from "../../../../DataTable/mod.ts";
 // import { DataTable } from "https://raw.githubusercontent.com/atmelino/DataTable/main/mod.ts"
+import { DataTable } from "https://deno.land/x/datatable@v0.0.3-alpha";
+
 import MyData from "./myData.tsx";
 
 export default function Body() {
-  const dataArray = [
-    { id: 1, name: "John", age: 30, rand: 0 },
-    { id: 2, name: "Jane", age: 28, rand: 3 },
-    { id: 3, name: "Doe", age: 45, rand: 4 },
-    { id: 4, name: "Cindy", age: 35, rand: 1 },
-  ];
-
   const [myData, setMyData] = useState(MyData);
-
-
-  const dataArray2 = [
-    { id: 4, name: "John", age: 30 },
-    { id: 5, name: "Jane", age: 28 },
-  ];
-
-  function changeData() {
-    setMyData(dataArray2);
-  }
 
   return (
     <>
@@ -30,17 +13,6 @@ export default function Body() {
         <DataTable
           dataArray={myData}
         />
-      </div>
-
-      <div>
-        <button
-          type="button"
-          class="w-full bg-gray-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700"
-          onClick={changeData}
-        >
-          change data
-        </button>
-
       </div>
     </>
   );

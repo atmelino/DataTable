@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>datatable_01</title>
+        <title>simpleDataTable</title>
       </Head>
       <Body />
     </>
