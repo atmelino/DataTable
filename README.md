@@ -2,15 +2,15 @@
 deno component for a dynamic data table based on data object stored in javascript array.
 
 ## Version
-v0.0.3-alpha
+v0.0.4-alpha
 
 ## Link to deno.land
-https://deno.land/x/datatable@v0.0.3-alpha
+https://deno.land/x/datatable@v0.0.4-alpha
 
 ## Usage
 ~~~js
 
-import { DataTable } from "https://deno.land/x/datatable@v0.0.3-alpha";
+import { DataTable } from "https://deno.land/x/datatable@v0.0.4-alpha";
 
   const dataArray = [
     { id: 1, name: "Joe", age: 33 },
