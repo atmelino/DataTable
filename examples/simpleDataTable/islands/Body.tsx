@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 // import { DataTable } from "https://raw.githubusercontent.com/atmelino/DataTable/main/mod.ts"
-import { DataTable } from "https://deno.land/x/datatable@v0.0.4-alpha/mod.ts";
+import { DataTable } from "https://deno.land/x/datatable@v0.0.5-alpha/mod.ts";
 
 export default function Body() {
   let buttonState = useRef(1);

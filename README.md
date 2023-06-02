@@ -2,15 +2,15 @@
 deno component for a dynamic data table based on data object stored in javascript array.
 
 ## Version
-v0.0.4-alpha
+v0.0.5-alpha
 
 ## Link to deno.land
-https://deno.land/x/datatable@v0.0.4-alpha
+https://deno.land/x/datatable@v0.0.5-alpha
 
 ## Usage
 ~~~js
 
-import { DataTable } from "https://deno.land/x/datatable@v0.0.4-alpha";
+import { DataTable } from "mod.ts";
 
   const dataArray = [
     { id: 1, name: "Joe", age: 33 },
@@ -27,7 +27,5 @@ import { DataTable } from "https://deno.land/x/datatable@v0.0.4-alpha";
 ~~~
 ## Features
 * Table will automatically update when dataArray is changed.
-* Pagination with variable number of pages
+* Pagination with fixed number of pages
 
-## Example
-![datatable example](images/datatable01.png)

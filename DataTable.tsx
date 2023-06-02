@@ -8,7 +8,7 @@ export interface DataTableProps {
 }
 
 export function DataTable(props: DataTableProps) {
-	const rowsPerPage=props.rowsPerPage | 15;
+	const rowsPerPage=props.rowsPerPage || 15;
 	const keys = Object.keys(props.dataArray[0]);
 	const [currentPage, setcurrentPage] = useState(1);
 	const [totalPages, settotalPages] = useState(Math.ceil(props.dataArray.length/rowsPerPage));
@@ -40,7 +40,6 @@ export function DataTable(props: DataTableProps) {
 
 	useEffect(() => {
 		settotalPages(Math.ceil(props.dataArray.length/rowsPerPage));
-		setcurrentPage(1);
 	}, [props]);
 
 	return (
