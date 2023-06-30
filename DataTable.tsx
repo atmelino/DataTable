@@ -2,22 +2,40 @@
 import { useEffect, useRef, useState } from "./mod.ts";
 import { Pagino } from "https://deno.land/x/paginodeno@v0.0.1-alpha/mod.ts";
 
+export interface DataTableStyle {
+	table: "";
+	thead: "";
+	header_tr: "";
+	th: "";
+	tbody: "";
+	body_tr: "";
+	td: "";
+}
+
 export interface DataTableProps {
 	dataArray: object[];
-	rowsPerPage?: number 
+	rowsPerPage?: number
+	style?: DataTableStyle;
 }
 
 export function DataTable(props: DataTableProps) {
-	const rowsPerPage=props.rowsPerPage || 15;
+	const tablestyle = props.style ||
+	{
+		table: "table align-items-center justify-content-center mb-0",
+		th: "border-2 border-blue-800",
+		tr: "border border-blue-800 bg-green-200"
+	}
+		;
+	const rowsPerPage = props.rowsPerPage || 15;
 	const keys = Object.keys(props.dataArray[0]);
 	const [currentPage, setcurrentPage] = useState(1);
-	const [totalPages, settotalPages] = useState(Math.ceil(props.dataArray.length/rowsPerPage));
+	const [totalPages, settotalPages] = useState(Math.ceil(props.dataArray.length / rowsPerPage));
 	const pageNumbers: number[] = [];
 
 	function onChange(page: number) {
 		setcurrentPage(page);
 	}
-	
+
 	function showData() {
 		const indexOfLastPage = currentPage * rowsPerPage;
 		const indexOfFirstPage = indexOfLastPage - rowsPerPage;
@@ -26,10 +44,10 @@ export function DataTable(props: DataTableProps) {
 		return (
 			currentRows.map((data, index) => {
 				return (
-					<tr class="border-2" key={index}>
+					<tr class={tablestyle.body_tr} key={index}>
 						{keys.map((k) => {
 							return (
-								<td class="border-2">{data[k as keyof typeof data]}</td>
+								<td class={tablestyle.td}>{data[k as keyof typeof data]}</td>
 							);
 						})}
 					</tr>
@@ -39,19 +57,24 @@ export function DataTable(props: DataTableProps) {
 	}
 
 	useEffect(() => {
-		settotalPages(Math.ceil(props.dataArray.length/rowsPerPage));
+		console.log(JSON.stringify(tablestyle, null, 4));
+
+		settotalPages(Math.ceil(props.dataArray.length / rowsPerPage));
 	}, [props]);
 
 	return (
 		<div>
-			<table className="table align-items-center justify-content-center mb-0">
-				<tr class="border-2">
-					{keys.map((data, index) => {
-						return <th class="border-2">{keys[index]}</th>;
-					})}
-				</tr>
-
-				{showData()}
+			<table class={tablestyle.table}>
+				<thead class={tablestyle.thead}>
+					<tr class={tablestyle.header_tr}>
+						{keys.map((data, index) => {
+							return <th class={tablestyle.th}>{keys[index]}</th>;
+						})}
+					</tr>
+				</thead>
+				<tbody class={tablestyle.tbody}>
+					{showData()}
+				</tbody>
 			</table>
 			<Pagino
 				count={totalPages}

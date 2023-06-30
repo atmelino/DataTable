@@ -1,11 +1,12 @@
 # DataTable
 deno component for a dynamic data table based on data object stored in javascript array.
 
-## Version
-v0.0.5-alpha
+## Examples
+![datatable01](images/datatable01.png)
+![datatable02](images/datatable02.png)
 
 ## Link to deno.land
-https://deno.land/x/datatable@v0.0.5-alpha
+https://deno.land/x/datatable
 
 ## Usage
 ~~~js
@@ -28,4 +29,15 @@ import { DataTable } from "mod.ts";
 ## Features
 * Table will automatically update when dataArray is changed.
 * Pagination with fixed number of pages
+* Table styles
 
+## Related Projects
+
+DataTable:
+https://deno.land/x/datatable
+
+PaginoDeno:
+https://deno.land/x/paginodeno
+
+d3no-chart:
+https://deno.land/x/d3nochart
